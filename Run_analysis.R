@@ -51,4 +51,6 @@ cols_names = cols[[2]]
 names(total_set) =c(cols_names,"activitylabel","subject")
 
 # Mean
-averages = total_set %>% group_by(activitylabel,subject) %>% summarize_all(funs(mean))
+averages = total_set %>% group_by(activitylabel,subject) %>% summarize_all(mean)
+
+
