@@ -9,9 +9,9 @@ library(dplyr)
 #    the average of each variable for each activity and each subject.
 
 # This script depends on utility script which has all the helper functions
-source("./run_analysis_util.R")
+source("C:/Users/FajarTri/Documents/GitHub/GetCleanDataProject/run_analysis_util.R")
 
-data_path = "./data/UCIDataset/"
+data_path = "UCI HAR Dataset"
 train_data_file = "/train/X_train.txt"
 test_data_file = "/test/X_test.txt"
 train_label_file = "/train/y_train.txt"
@@ -35,6 +35,7 @@ activity_labels = get_activity_names(data_path,activilty_label_file)
 # Get the columns to be kept i.e. only with means and standard deviation
 cols = get_feature_cols_means_std(data_path,features_file)
 cols_to_keep= cols[[1]]
+
 # select the given columns as needed
 total_data = total_data %>% select(cols_to_keep)
 
